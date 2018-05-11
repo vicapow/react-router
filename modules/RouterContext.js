@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import invariant from 'invariant'
 import React from 'react'
 
@@ -5,14 +6,16 @@ import deprecateObjectProperties from './deprecateObjectProperties'
 import getRouteParams from './getRouteParams'
 import { isReactChildren } from './RouteUtils'
 import warning from './routerWarning'
+import PropTypes from 'prop-types'
+import createReactClass from 'create-react-class'
 
-const { array, func, object } = React.PropTypes
+const { array, func, object } = PropTypes
 
 /**
  * A <RouterContext> renders the component tree for a given router state
  * and sets the history object and the current location in context.
  */
-const RouterContext = React.createClass({
+const RouterContext = createReactClass({
 
   propTypes: {
     history: object,

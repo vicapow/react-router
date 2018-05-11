@@ -1,4 +1,6 @@
+/* eslint-disable react/prop-types */
 import invariant from 'invariant'
+import createReactClass from 'create-react-class'
 import React from 'react'
 import hoistStatics from 'hoist-non-react-statics'
 import { routerShape } from './PropTypes'
@@ -10,7 +12,7 @@ function getDisplayName(WrappedComponent) {
 export default function withRouter(WrappedComponent, options) {
   const withRef = options && options.withRef
 
-  const WithRouter = React.createClass({
+  const WithRouter = createReactClass({
     contextTypes: { router: routerShape },
     propTypes: { router: routerShape },
 
